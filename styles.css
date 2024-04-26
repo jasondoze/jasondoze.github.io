@@ -18,11 +18,12 @@ header, p {
 
 header h1 {
     font-size: 3em;
+    color: #8B0000; /* Blood red color for header */
     text-shadow: 2px 2px 4px #000000; /* Add text shadow for a dramatic effect */
 }
 
 p {
-    font-size: 1.5em;
+    font-size: 2em; /* Larger font size for emphasis */
     margin-top: 20px;
     color: #FFD700; /* Golden text color */
     text-shadow: 1px 1px 2px #000000; /* Small text shadow */
@@ -34,6 +35,23 @@ h1:hover, p:hover {
     text-shadow: 0px 0px 10px #FFFFFF; /* Glowing effect on hover */
 }
 
+/* Add a subtle pulse animation to the h1 for attention */
+@keyframes pulse {
+    0% {
+        text-shadow: 2px 2px 4px #000000;
+    }
+    50% {
+        text-shadow: 2px 2px 10px #8B0000;
+    }
+    100% {
+        text-shadow: 2px 2px 4px #000000;
+    }
+}
+
+header h1 {
+    animation: pulse 2s infinite ease-in-out;
+}
+
 /* Responsive typography */
 @media (max-width: 768px) {
     header h1 {
@@ -41,6 +59,6 @@ h1:hover, p:hover {
     }
 
     p {
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
 }
